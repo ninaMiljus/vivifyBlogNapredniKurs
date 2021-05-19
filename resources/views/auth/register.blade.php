@@ -9,7 +9,7 @@
     <label for="name">Name</label>
     <input
       type="text"
-      class="form-control @error('name') is-invalid @enderror" 
+      class="form-control @error('name') is-invalid @enderror"
       id="name"
       aria-describedby="nameHelp"
       placeholder="Enter name"
@@ -22,7 +22,7 @@
     <label for="email">Email</label>
     <input
       type="email"
-      class="form-control @error('email') is-invalid @enderror" 
+      class="form-control @error('email') is-invalid @enderror"
       id="email"
       aria-describedby="emailHelp"
       placeholder="Enter email"
@@ -35,7 +35,7 @@
     <label for="password">Password</label>
     <input
       type="password"
-      class="form-control @error('password') is-invalid @enderror" 
+      class="form-control @error('password') is-invalid @enderror"
       id="password"
       aria-describedby="emailHelp"
       placeholder="Enter password"
@@ -48,12 +48,26 @@
     <label for="password_confirmation">Confirm password</label>
     <input
       type="password"
-      class="form-control @error('password_confirmation') is-invalid @enderror" 
+      class="form-control @error('password_confirmation') is-invalid @enderror"
       id="password_confirmation"
       aria-describedby="password_confirmationHelp"
       placeholder="Confirm password"
       name="password_confirmation">
     @error('password_confirmation')
+      <div class="alert alert-danger">{{$message}}</div>
+    @enderror
+  </div>
+
+  <div class="form-group">
+    <label for="password_confirmation">Date of birth</label>
+    <input
+      type="date"
+      class="form-control @error('date_of_birth') is-invalid @enderror"
+      id="date_of_birth"
+      aria-describedby="date_of_birthHelp"
+      placeholder="Date of birth"
+      name="date_of_birth">
+    @error('date_of_birth')
       <div class="alert alert-danger">{{$message}}</div>
     @enderror
   </div>
@@ -67,4 +81,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-@endsection 
+@endsection
