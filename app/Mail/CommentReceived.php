@@ -24,7 +24,7 @@ class CommentReceived extends Mailable
     public function __construct()
     {
         $this->comment = $comment;
-    $this->commentAuthor = $commentAuthor;
+        $this->commentAuthor = $commentAuthor;
     }
 
     /**

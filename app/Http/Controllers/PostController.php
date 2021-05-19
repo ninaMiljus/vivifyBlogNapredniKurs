@@ -20,7 +20,7 @@ class PostController extends Controller
     $posts = Post::published()
         ->with('comments')
         ->orderBy('title')
-        ->get();
+        ->paginate(15);
     return view('posts.index', compact('posts'));
   }
 
@@ -29,8 +29,8 @@ class PostController extends Controller
     if (!$post->is_published) {
         throw new ModelNotFoundException();
       }
-       // $comments = Comment::where('post_id', $post->id)->get();
-    return view('posts.show', compact('post'));
+      // $comments = Comment::where('post_id', $post->id)->get();
+      return view('posts.show', compact('post'));
   }
 
   public function create()
