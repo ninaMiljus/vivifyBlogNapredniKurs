@@ -13,11 +13,11 @@ class Post extends Model
     public static function published() {
         return self::where('is_published', true);
       }
-    
+
       public static function unpublished() {
         return self::where('is_published', false);
       }
-    
+
     public function getRandomNumber()
   {
     return 4;
@@ -28,8 +28,8 @@ class Post extends Model
     return $this->hasMany(Comment::class);
   }
 
-  public function user()
+  public function author()
   {
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class, 'user_id');
   }
 }
