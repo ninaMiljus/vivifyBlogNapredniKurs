@@ -9,5 +9,9 @@
     <div class="container">
       @yield('content')
     </div>
+
+    @if(session('status_message'))
+      <div class="alert alert-info">{{session('status_message')}}</div>
+    @endif
   </body>
 </html>
